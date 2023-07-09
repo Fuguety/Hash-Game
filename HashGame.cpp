@@ -81,7 +81,7 @@ public:
         try {
             int position = stoi(getPos);
             
-            if (pos[position] == computer) {
+            if (pos[position] == computer || pos[position] == player) {
                 cout << "\nPlease choose a position that has not been occupied!\n";
             } else {
                 pos[position] = player;

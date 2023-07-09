@@ -71,7 +71,7 @@ class Game():
         try:
             getPos = int(getPos)
 
-            if pos[getPos]== self.computer:
+            if pos[getPos]== self.computer or pos[getPos] == self.player:
                 print("\nPlease choose a position that has not been occupied!\n")
 
             else:
