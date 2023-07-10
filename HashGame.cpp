@@ -8,6 +8,7 @@ class Game {
     char o = 'o';
     char player;
     char computer;
+    int playerChoice;
     
 public:
     Game() {
@@ -16,8 +17,30 @@ public:
         
         cout << "Welcome to the game" << endl;
         
+        // Who's playing
+        while (true) {
+            cout << "\nHow would you like to play? \nPlayer x Computer -- 1\nPlayer x Player -- 2\n";
+            try {
+                int playerChoice;
+                cin >> playerChoice;
+                
+                if (playerChoice == 1 || playerChoice == 2) {
+                    break;
+                } else {
+                    cout << "Please choose a valid option\n";
+                }
+            } catch(...) {
+                cout << "Please insert a number\n";
+            }
+        
+        
         while (true) {
             cout << "\nWould you like to play as X or O?\n x -- 1 \n o -- 0\n";
+
+            if (playerChoice == 2) {
+                cout << "Player 2 will receive the remaining option\n";
+            }
+            
             int pp;
             cin >> pp;
             cout << endl;
@@ -102,6 +125,9 @@ public:
         }
     }
 };
+
+
+
 
 int main() {
     srand(time(0));
