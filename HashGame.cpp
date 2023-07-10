@@ -8,7 +8,6 @@ class Game {
     char o = 'o';
     char player;
     char computer;
-    int playerChoice;
     
 public:
     Game() {
@@ -18,10 +17,10 @@ public:
         cout << "Welcome to the game" << endl;
         
         // Who's playing
+        int playerChoice;
         while (true) {
             cout << "\nHow would you like to play? \nPlayer x Computer -- 1\nPlayer x Player -- 2\n";
             try {
-                int playerChoice;
                 cin >> playerChoice;
                 
                 if (playerChoice == 1 || playerChoice == 2) {
@@ -32,8 +31,9 @@ public:
             } catch(...) {
                 cout << "Please insert a number\n";
             }
+        }
         
-        
+        // Choose x or o
         while (true) {
             cout << "\nWould you like to play as X or O?\n x -- 1 \n o -- 0\n";
 
@@ -58,6 +58,7 @@ public:
             }
         }
         
+        // Game loop
         while (running) {
             cout << pos[0] << "|" << pos[1] << "|" << pos[2] << endl;
             cout << "_____" << endl;
@@ -77,7 +78,7 @@ public:
                     pos[i] = resetPos[i];
                 }
             } else {
-                validAnswer(getPos, pos);
+                validAnswer(getPos, pos, playerChoice);
                 
                 // check win condition
                 if ((pos[0] == pos[1] && pos[1] == pos[2]) ||
@@ -100,7 +101,7 @@ public:
         }
     }
     
-    void validAnswer(string getPos, char* pos) {
+    void validAnswer(string getPos, char* pos, int playerChoice) {
         try {
             int position = stoi(getPos);
             
@@ -109,14 +110,35 @@ public:
             } else {
                 pos[position] = player;
                 
-                while (true) {
-                    int inList = rand() % 9;
-                    
-                    if (pos[inList] != 'x' && pos[inList] != 'o') {
-                        pos[inList] = computer;
-                        break;
-                    } else {
-                        continue;
+                if (playerChoice == 2) {
+                    while (true) {
+                        cout << pos[0] << "|" << pos[1] << "|" << pos[2] << endl;
+                        cout << "_____" << endl;
+                        cout << pos[3] << "|" << pos[4] << "|" << pos[5] << endl;
+                        cout << "_____" << endl;
+                        cout << pos[6] << "|" << pos[7] << "|" << pos[8] << endl;
+                        
+                        cout << "\nPlease choose a place: ";
+                        int playerTwo;
+                        cin >> playerTwo;
+                        
+                        if (pos[playerTwo] == computer || pos[playerTwo] == player) {
+                            cout << "\nPlease choose a position that has not been occupied!\n";
+                        } else {
+                            pos[playerTwo] = computer;
+                            break;
+                        }
+                    }
+                } else {
+                    while (true) {
+                        int inList = rand() % 9;
+                        
+                        if (pos[inList] != 'x' && pos[inList] != 'o') {
+                            pos[inList] = computer;
+                            break;
+                        } else {
+                            continue;
+                        }
                     }
                 }
             }
@@ -126,12 +148,8 @@ public:
     }
 };
 
-
-
-
 int main() {
     srand(time(0));
     Game game;
     return 0;
 }
-
