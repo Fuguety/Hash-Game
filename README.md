@@ -1,6 +1,8 @@
 # Hash-Game
 
-Hash Game to be playerd on terminal.
+<br>
+Hash Game to be played on terminal.
+<br>
 
 <h2>How to install</h2>
 
