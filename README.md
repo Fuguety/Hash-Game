@@ -8,9 +8,9 @@ Hash Game to be played on terminal.
 
 Clone the repository
 
-Python - Just run the *HashGame.py*
+**Python** - Just run the *HashGame.py*
 
-C++ - Type make on the terminal and run the .exe or .out file
+**C++** - Type make on the terminal and run the .exe or .out file
 
 
 ![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
