@@ -2,6 +2,8 @@
 
 <br>
 Hash Game to be played on terminal.
+
+If you have any complains or suggestions feel free to open up an issue and I'll take a look at it :).
 <br>
 
 <h2>How to install</h2>
