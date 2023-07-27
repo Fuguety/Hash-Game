@@ -24,3 +24,9 @@ Clone the repository
 
 ![linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+
+**Requirements**
+
+**Python** - ![python](https://www.python.org/downloads/)
+
+**C++** - g++ compiler/gccc compiler
